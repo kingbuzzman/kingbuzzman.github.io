@@ -1,6 +1,6 @@
 * { padding:0; margin:0; color:black; }
 
-#sidebar, #face-wrap, #legal { display:none; }
+#sidebar, #face-wrap, #legal, .visual-aid { display:none; }
 
 html { width:100%; }
 section { padding-top:10px; }

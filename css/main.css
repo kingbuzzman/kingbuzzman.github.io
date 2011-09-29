@@ -1,3 +1,8 @@
+/*
+Colors
+FFFFFF,EEEEEE,DDDDDD,CCCCCC,BBBBBB,AAAAAA,999999,888888,777777,666666,555555,444444,333333,222222,111111,000000
+*/
+
 * { padding:0; margin:0; }
 
 /* IE6 */
@@ -33,6 +38,7 @@ a:hover { font-weight:bold; color:#99A; }
     text-decoration:none;
 }
 
+/* IE7 */
 #wrapper > #sidebar { *left:0; *position:relative; *top:163px; *float:left; }
 #wrapper > #sidebar ul { *top:0; *position:relative; }
 
@@ -50,6 +56,7 @@ header { overflow:hidden; }
 h2 { padding-top:10px; }
 
 h3 {
+    clear:both;
     margin-top:15px;
     *margin-top:20px;
     padding:3px;
@@ -62,6 +69,9 @@ h3 {
 #aboutme p { line-height:1.2; }
 #who-cares { font-size:12px; font-style:italic; padding:14px 0 0 14px; color:gray; }
 
+section .visual-aid { margin-top: 15px; }
+section div.visual-aid { clear:both; overflow:hidden; margin:0; }
+section div.visual-aid img { float:left; margin:0; }
 article { border-top:1px solid #333; padding-top:5px; margin-top:5px; }
 article:hover { background-color:rgba(51,51,51,0.3); }
 article.top { border-top:none; }

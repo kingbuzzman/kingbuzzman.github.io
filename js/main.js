@@ -5,10 +5,11 @@ $(document).ready(function(){
     // initial preparation
     (function(){
         var CURRENT_YEAR = (new Date).getFullYear();
+        
         var URL_HASH = window.location.hash;
         var preload = navigationPannels.filter(URL_HASH);
         
-        // update copy right year
+        // update copyright year
         $("#year").html(CURRENT_YEAR);
         
         // hide all pannels
