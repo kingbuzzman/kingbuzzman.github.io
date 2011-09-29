@@ -72,6 +72,7 @@ article:hover { background-color:rgba(51,51,51,0.3); }
 article.top { border-top:none; }
 
 article .breakdown { text-align:center; }
+article .breakdown .tags li { cursor:pointer; }
 article .breakdown:hover .visual-aid { display:inline; }
 article .breakdown .visual-aid { display:none; }
 

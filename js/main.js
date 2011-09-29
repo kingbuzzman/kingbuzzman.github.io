@@ -25,14 +25,16 @@ $(document).ready(function(){
         }
     })();
     
-    $(".breakdown").hover(
-        function() {
-            $(this).children("img").hide().slideToggle("slow");
+    // image breakdown for tags
+    $(".breakdown").hover(function(){
+            $(this).children("img").hide();
         },
         function(){
             $(this).children("img").stop().removeAttr('style');
         }
-    );
+    ).click(function(){
+        $(this).children("img").slideToggle("slow");
+    });
     
     // navigation handling
     navigationLinks.click(function(){
