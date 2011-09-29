@@ -25,6 +25,15 @@ $(document).ready(function(){
         }
     })();
     
+    $(".breakdown").hover(
+        function() {
+            $(this).children("img").hide().slideToggle("slow");
+        },
+        function(){
+            $(this).children("img").stop().removeAttr('style');
+        }
+    );
+    
     // navigation handling
     navigationLinks.click(function(){
         var navigationLink = $(this);
