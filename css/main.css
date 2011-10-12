@@ -11,15 +11,18 @@
 
 body {
     background:url(/images/body_bg.png) fixed;
-    color:#CCCCCC;
-    text-shadow:0 1px 3px black;
-    font-family:DejaVu-regular,arial,helvetica;
 }
 
 a { color:#999; text-decoration:none; }
 a:hover { font-weight:bold; color:#99A; }
 
-#wrapper { margin:0 auto; width:800px; }
+#wrapper {
+    margin:0 auto;
+    width:800px;
+    color:#CCCCCC;
+    text-shadow:0 1px 3px black;
+    font-family:DejaVu-regular,arial,helvetica;
+}
 #sidebar { position:fixed; height:100%; width:150px; overflow:auto; }
 #sidebar ul { top:46%; position:relative; }
 #sidebar ul li { list-style:none; }
@@ -47,6 +50,7 @@ header { overflow:hidden; }
 #main-details-wrap h4 { font-style:italic; }
 #main-details-wrap ul { padding:20px; }
 #main-details-wrap ul li { list-style:none; display:block; }
+#main-details-wrap ul li > .gc-cs-link { color:#CCC; text-decoration:none; }
 
 h2 { padding-top:10px; }
 
