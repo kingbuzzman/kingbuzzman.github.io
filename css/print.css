@@ -1,6 +1,6 @@
 * { padding:0; margin:0; color:black; }
 
-#sidebar, #face-wrap, #legal, .visual-aid { display:none; }
+#sidebar, #face-wrap, #legal, .visual-aid { display:none!important; }
 
 /* Google voice */
 .gc-cs-link { color:inherit !important; text-decoration:none !important; }
