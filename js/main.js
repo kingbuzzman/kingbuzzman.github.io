@@ -52,10 +52,7 @@ $(document).ready(function(){
     navigationLink.addClass("bold");
 
     // to use animations the element needs to be hidden (not with a class)
-    element.hide().removeClass("hidden").fadeIn(function(){
-      // removes the style="visible:block;"
-      element.css("display", "");
-    });
+    element.hide().removeClass("hidden").fadeIn();
   });
 
 });
