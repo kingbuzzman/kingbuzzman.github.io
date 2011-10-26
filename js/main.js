@@ -2,6 +2,13 @@ $(document).ready(function(){
     var navigationLinks = $("#sidebar a");
     var navigationPannels = $("section");
     
+    function toggleBreakdown(){
+      var element = $(this);
+      element.children("img").slideToggle("slow", function(){
+        element.one("click", toggleBreakdown);
+      });
+    }
+    
     // initial preparation
     (function(){
         var CURRENT_YEAR = (new Date).getFullYear();
@@ -32,9 +39,7 @@ $(document).ready(function(){
         function(){
             $(this).children("img").stop().removeAttr('style');
         }
-    ).click(function(){
-        $(this).children("img").slideToggle("slow");
-    });
+    ).one("click", toggleBreakdown);
     
     // navigation handling
     navigationLinks.click(function(){
