@@ -5,7 +5,7 @@ $(document).ready(function(){
     function toggleBreakdown(){
       var element = $(this);
       element.children("img").slideToggle("slow", function(){
-        element.one("click", toggleBreakdown);
+        element.unbind("click").one("click", toggleBreakdown);
       });
     }
     
@@ -34,7 +34,7 @@ $(document).ready(function(){
     
     // image breakdown for tags
     $(".breakdown").hover(function(){
-            $(this).children("img").hide();
+            $(this).unbind("click").one("click", toggleBreakdown).children("img").hide();
         },
         function(){
             $(this).children("img").stop().removeAttr('style');
