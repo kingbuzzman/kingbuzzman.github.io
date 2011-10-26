@@ -8,6 +8,10 @@
 
 .bold { font-weight:bold; }
 .hidden { display:none; }
+.print-only { display:none !important; }
+
+/* Google voice */
+.gc-cs-link { color:inherit !important; text-decoration:none !important; }
 
 body {
     background:url(/images/body_bg.png) fixed;
@@ -50,7 +54,6 @@ header { overflow:hidden; }
 #main-details-wrap h4 { font-style:italic; }
 #main-details-wrap ul { padding:20px; }
 #main-details-wrap ul li { list-style:none; display:block; }
-#main-details-wrap ul li > .gc-cs-link { color:#CCC; text-decoration:none; }
 
 h2 { padding-top:10px; }
 
@@ -69,6 +72,7 @@ h3 {
 #who-cares { font-size:12px; font-style:italic; padding:14px 0 0 14px; color:gray; }
 
 section .visual-aid { margin-top: 15px; }
+section p.visual-aid { margin-top:0; }
 section div.visual-aid { clear:both; overflow:hidden; margin:0; }
 section div.visual-aid img { float:left; margin:0; }
 article { border-top:1px solid #333; padding-top:5px; margin-top:5px; }

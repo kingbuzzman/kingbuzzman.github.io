@@ -2,8 +2,12 @@
 
 #sidebar, #face-wrap, #legal, .visual-aid { display:none; }
 
+/* Google voice */
+.gc-cs-link { color:inherit !important; text-decoration:none !important; }
+
 html { width:100%; }
 section { padding-top:10px; }
+section.page-break { page-break-before:always; }
 section, section h3 { clear:both; }
 section .box {
     border:1px solid black;
@@ -14,22 +18,22 @@ section .box {
     text-transform:uppercase;
     font-weight:bold;
 }
-section article { margin-top:2px; border-top:1px solid #333; clear:both; }
+section article { margin-top:2px; padding-top:2px; border-top:1px solid #333; clear:both; overflow:hidden; }
 section article.top { border-top:none; }
 section article h4 span { margin-top:2px; }
 section article h5 strong { float:right; margin-right:10px; }
 a { text-decoration:none; }
-h2 { border-top:2px dashed black; border-bottom:2px dashed black; }
+h2 { border-bottom:2px dashed black; }
 
 ul.tags { list-style:none; margin-top:0; padding:0; clear:both; }
-ul.tags li { font-style:italic; display:inline-block; border:1px solid black; padding:1px; margin:1px 1px 0 0; white-space:nowrap; font-size:12px; }
+ul.tags li { font-style:italic; display:block; border:1px solid black; padding:1px; margin:2px 1px; white-space:nowrap; font-size:12px; float:left; }
 
 #skills { overflow:hidden; }
 #skills article { padding:1px; width:32%; float:left; min-height:36px; border:1px solid black; margin:1px; clear:none; }
 #skills article p { padding-left:2px; font-size:10px; }
 #skills article .box { margin:1px; }
 
-#main-details-wrap ul li { list-style:none; display:block; float:left; width:33%; }
+#main-details-wrap ul li { list-style:none; display:block; float:left; width:25%; }
 
 footer { font-size:12px; text-align:center; padding-top:15px; }
 #last-modified { font-style:italic; color:gray; }
