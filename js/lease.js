@@ -57,6 +57,15 @@ $(document).ready(function(){
   $("#depreciation_payment, #money_factor_fees, #tax").change(monthlyPayment);
   $("#monthly_payment, #monthly_payment_total").change(TotalPayments);
 
+  $("#calculate").click(function() {
+    residualAmount();
+    depreciationAmount();
+    depreciationPayment();
+    moneyFactorFees();
+    monthlyPayment();
+    TotalPayments();
+  })
+
   // formatting
   $("#sticker_price, #invoice_price").blur(function() {
     var el = $(this);
