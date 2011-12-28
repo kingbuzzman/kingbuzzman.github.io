@@ -1,0 +1,27 @@
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Georgia, Palatino, serif;
+    font-size: 1em;
+}
+
+ul { padding: 0; overflow: hidden; }
+ul li {
+    list-style: none;
+    display: block;
+    overflow: hidden;
+}
+ul li label {
+    width: 20%;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+ul li input, ul li select {
+    width: 70%;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.readonly { color: #B8B8B8; background-color: #484848; }

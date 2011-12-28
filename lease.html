@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lease Calculator</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="My lease calucator" />
+    <meta name="keywords" content="lease" />
+    <meta name="revised" content="Update, 12/28/2011" />
+    <meta name="author" content="Javier Buzzi" />
+
+    <link type="text/css" rel="stylesheet" href="/css/lease.css" media="screen" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://raw.github.com/josscrowcroft/accounting.js/master/accounting.min.js"></script>
+    <script type="text/javascript" src="/js/lease.js"></script>
+
+  </head>
+  <body>
+    <a href="http://www.edmunds.com/car-leasing/calculate-your-own-lease-payment.html" target="_blank">Source</a>
+
+    <ul>
+      <li><label for="tax">Tax</label><input id="tax" type="numeric" value="7.0%"></li>
+      <li>
+        <label for="lease_terms">Lease Terms</label>
+        <select id="lease_terms">
+          <option value="36">36</option>
+          <option value="24">24</option>
+        </select>
+      </li>
+    </ul>
+
+    <ul>
+      <li><label for="sticker_price">Sticker Price</label><input id="sticker_price" type="numeric" placeholder="42,0000"></li>
+      <li><label for="residual">Residual</label><input id="residual" type="numeric" placeholder="63.0%" value="57%"></li>
+      <li><label for="residual_amount">Residual Amount</label><input id="residual_amount" type="numeric" class="readonly"></li>
+    </ul>
+
+    <ul>
+      <li><label for="invoice_price">Invoice Price</label><input id="invoice_price" type="numeric" placeholder="40,0000"></li>
+      <li><label for="depreciation">Depreciation Amount</label><input id="depreciation" type="numeric" class="readonly"></li>
+    </ul>
+
+    <ul>
+      <li><label for="depreciation_payment">Depreciation Payment</label><input id="depreciation_payment" type="numeric" class="readonly"></li>
+    </ul>
+
+    <ul>
+      <li><label for="money_factor">Money Factor</label><input id="money_factor" type="numeric" placeholder=".0037" value=".0037"></li>
+      <li><label for="apr">APR</label><input id="apr" type="numeric" class="readonly">
+      <li><label for="money_factor_fees">Fees</label><input id="money_factor_fees" type="numeric" class="readonly"></li>
+    </ul>
+
+    <ul>
+      <li><label for="monthly_payment">Monthly Payment</label><input id="monthly_payment" type="numeric" class="readonly"></li>
+      <li><label for="monthly_taxes">Taxes</label><input id="monthly_taxes" type="numeric" class="readonly"></li>
+      <li><label for="monthly_payment_total">Monthly Total</label><input id="monthly_payment_total" type="numeric" class="readonly"></li>
+    </ul>
+
+    <ul>
+      <li><label for="total_payments">Total Payments</label><input id="total_payments" type="numeric" class="readonly"></li>
+      <li><label for="total_taxes">Total Payments w/ taxes</label><input id="total_taxes" type="numeric" class="readonly"></li>
+    </ul>
+
+  </body>
+</html>
+
