@@ -1,27 +1,27 @@
 $(document).ready(function(){
 
   var navigationLinks = $("#sidebar a");
-  var navigationPannels = $("section");
+  var navigationPanels = $("#page > section");
 
   // initial preparation
   (function(){
-    var CURRENT_YEAR = (new Date).getFullYear();
-    
+    var CURRENT_YEAR = (new Date()).getFullYear();
+
     var URL_HASH = window.location.hash;
-    var preload = navigationPannels.filter(URL_HASH);
-    
+    var preload = navigationPanels.filter(URL_HASH);
+
     // update copyright year
     $("#year").html(CURRENT_YEAR);
-    
-    // hide all pannels
-    navigationPannels.addClass("hidden");
-    
-    // if theres a hash in the URL start with that pannel open
+
+    // hide all panels
+    navigationPanels.addClass("hidden");
+
+    // if theres a hash in the URL start with that panel open
     if(preload.length === 1){
       preload.removeClass("hidden");
       navigationLinks.filter("[href=" + URL_HASH + "]").addClass("bold");
     } else {
-      navigationPannels.first().removeClass("hidden");
+      navigationPanels.first().removeClass("hidden");
       navigationLinks.first().addClass("bold");
     }
   })();
@@ -47,7 +47,7 @@ $(document).ready(function(){
     var navigationLink = $(this);
     var element = $(navigationLink.attr("href"));
 
-    navigationPannels.addClass("hidden");
+    navigationPanels.addClass("hidden");
     navigationLinks.removeClass("bold");
     navigationLink.addClass("bold");
 
