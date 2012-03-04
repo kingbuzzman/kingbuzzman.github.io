@@ -21,12 +21,12 @@ section#skills {
 
   &.page-break { page-break-before:always; }
 
-  .content { position: relative; }
+  .content { overflow: hidden; }
 
-  header { position: relative; }
+  header { width: 210px; float: left; }
 
   section {
-    header { position: initial; width: initial; float: none; }
+    header { position: initial; width: 100%; float: none; }
 
     article {
       .content { float: none; }
@@ -39,7 +39,7 @@ section#skills {
 
 section article { clear:both; overflow:hidden; }
 section article.top { border-top:none; }
-section section article div { margin: 1px; padding: 1px; border: 1px solid black; overflow: hidden; min-height:36px; }
+section section article div { margin: 1px; padding: 1px; border: 1px solid black; overflow: hidden; min-height:45px; }
 section article h4 span { margin-top:2px; }
 section article h5 strong { float:right; margin-right:10px; }
 a { text-decoration:none; }
