@@ -118,6 +118,13 @@ header {
 #main-details-wrap h4 {
   font-style: italic;
 }
+#main-details-wrap h4 .strike {
+  text-decoration: line-through;
+  color: red;
+}
+#main-details-wrap h4 .strike span {
+  color: #ccc;
+}
 #main-details-wrap ul {
   padding: 10px;
 }

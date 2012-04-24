@@ -51,7 +51,16 @@ header { overflow:hidden; }
 #face-wrap img { left:-20px; position:relative; opacity:0.6; }
 #main-details-wrap { float:left; padding:10px; }
 #main-details-wrap h1 { font-size:38px; }
-#main-details-wrap h4 { font-style:italic; }
+#main-details-wrap h4 {
+  font-style: italic;
+
+  .strike {
+    text-decoration: line-through;
+    color: red;
+
+    span { color: #ccc; }
+  }
+}
 #main-details-wrap ul { padding:10px; }
 #main-details-wrap ul li { list-style:none; display:block; }
 
