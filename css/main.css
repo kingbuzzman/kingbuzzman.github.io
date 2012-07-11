@@ -104,7 +104,9 @@ header {
   position: relative;
 }
 #face-wrap img {
-  left: -20px;
+  top: -34px;
+  height: 334px;
+  left: -53px;
   position: relative;
   opacity: 0.6;
 }
@@ -119,6 +121,7 @@ header {
   font-style: italic;
 }
 #main-details-wrap h4 .strike {
+  opacity: 0.5;
   text-decoration: line-through;
   color: red;
 }
@@ -224,7 +227,9 @@ article h4 {
 article h4 div {
   float: left;
 }
-article h4 a, article h4 span, article h4 div {
+article h4 a,
+article h4 span,
+article h4 div {
   font-size: 16px;
   *float: left;
 }
@@ -245,7 +250,8 @@ article p {
 article p.top {
   padding: 0;
 }
-article p, article ul {
+article p,
+article ul {
   clear: both;
   font-size: 14px;
   padding-top: 5px;
