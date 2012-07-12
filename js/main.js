@@ -4,7 +4,7 @@ $(document).ready(function(){
   var navigationPanels = $("#page > section");
 
   // initial preparation
-  (function(){
+  (function() {
     var CURRENT_YEAR = (new Date()).getFullYear();
 
     var URL_HASH = window.location.hash;
@@ -13,11 +13,62 @@ $(document).ready(function(){
     // update copyright year
     $("#year").html(CURRENT_YEAR);
 
+    // friendlier amount time spent at each job
+    $("#employment h4").hover(function() {
+      var box = $(this).find('.box');
+      var time = box.clone();
+
+      var message = "";
+      var months = 0;
+      var years = 0;
+      var start = new Date(box.html().split("-")[0]);
+      var end = new Date(box.html().split("-")[1]);
+
+      // fix 'present' value
+      end = end == "Invalid Date"? new Date(): end;
+
+      // calculate the amount of months
+      months = (end.getFullYear() - start.getFullYear()) * 12;
+      months -= start.getMonth() + 1;
+      months += end.getMonth() + 1;
+
+      // calculate the amount of years
+      years = months / 12;
+
+      if (parseInt(years, 10) > 0) {
+        message = years.toFixed(2) + ' years';
+      } else {
+        message = months + ' months';
+      }
+
+      time.hide();
+      time.css({
+        'width': box.width(),
+        'position': 'relative',
+        'right': -1 * box.innerWidth(),
+        'textAlign': 'center'
+      });
+      time.html(message);
+
+      box.stop();
+      box.animate({opacity:0});
+      box.after(time); // attach the human readable time
+
+      time.fadeIn();
+    }, function() {
+      var box = $(this).find('.box');
+      var time = box.next();
+
+      box.stop();
+      box.animate({opacity:1});
+      time.remove();
+    });
+
     // hide all panels
     navigationPanels.addClass("hidden");
 
     // if theres a hash in the URL start with that panel open
-    if(preload.length === 1){
+    if (preload.length === 1) {
       preload.removeClass("hidden");
       navigationLinks.filter("[href=" + URL_HASH + "]").addClass("bold");
     } else {
@@ -27,15 +78,16 @@ $(document).ready(function(){
   })();
 
   // breakdown animation -- fixes double-click bug with slideToggle()
-  function toggleBreakdown(){
+  function toggleBreakdown() {
     var element = $(this);
+
     element.children("img").slideToggle("slow", function(){
       element.unbind("click").one("click", toggleBreakdown);
     });
   }
 
   // image breakdown for tags
-  $(".breakdown").hover(function(){
+  $(".breakdown").hover(function() {
       $(this).children("img").hide();
     }, function(){
       $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr('style');
@@ -43,7 +95,7 @@ $(document).ready(function(){
   ).one("click", toggleBreakdown);
 
   // navigation handling
-  navigationLinks.click(function(){
+  navigationLinks.click(function() {
     var navigationLink = $(this);
     var element = $(navigationLink.attr("href"));
 
