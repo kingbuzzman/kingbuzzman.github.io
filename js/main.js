@@ -21,8 +21,15 @@ $(document).ready(function(){
       var message = "";
       var months = 0;
       var years = 0;
-      var start = new Date(box.html().split("-")[0]);
-      var end = new Date(box.html().split("-")[1]);
+      var start = box.html().split("-")[0];
+      var end = box.html().split("-")[1];
+
+      // safari likes to see a day, not just month year
+      start = (start.match(/(\w{3}) (\d{4})/) || []).splice(1,2).join(" 1, ");
+      end = (end.match(/(\w{3}) (\d{4})/) || []).splice(1,2).join(" 1, ");
+
+      start = new Date(start);
+      end = new Date(end);
 
       // fix 'present' value
       end = end == "Invalid Date"? new Date(): end;
