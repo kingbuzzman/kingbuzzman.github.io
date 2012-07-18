@@ -18,7 +18,7 @@ body {
 }
 
 a { color:#999; text-decoration:none; }
-a:hover { font-weight:bold; color:#99A; }
+a:hover { color:#ccc; }
 
 #wrapper {
     margin:0 auto;
@@ -27,17 +27,34 @@ a:hover { font-weight:bold; color:#99A; }
     text-shadow:0 1px 3px black;
     font-family:DejaVu-regular,arial,helvetica;
 }
-#sidebar { position:fixed; height:100%; width:150px; overflow:auto; }
-#sidebar ul { top:46%; position:relative; }
-#sidebar ul li { list-style:none; }
-#sidebar ul li a {
-    display:block;
-    color:#999;
-    font-size:16px;
-    margin:0.5em 0;
-    line-height:1em;
-    text-shadow:0 1px 3px black;
-    text-decoration:none;
+#sidebar {
+  position: fixed;
+  height: 100%;
+  width: 150px;
+  overflow: auto;
+
+  ul {
+    top: 46%;
+    position: relative;
+
+    li {
+      list-style: none;
+
+      &.pad-top {
+        padding-top: 15px;
+      }
+
+      a {
+        display: block;
+        color: #999;
+        font-size: 16px;
+        margin: 0.5em 0;
+        line-height: 1em;
+        text-shadow: 0 1px 3px black;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 /* IE7 */
@@ -123,7 +140,7 @@ article h5 span { *float:left; }
 article h5 strong { float:right; }
 article p { text-align:justify; }
 article p.top { padding:0; }
-article p, article ul { clear:both; font-size:14px; padding-top:5px; }
+article p, article ul { clear:both; font-size:14px; padding-top:10px; }
 article ul li { margin-left:16px; }
 
 ul.tags { list-style:none; margin-top:10px; padding:0; clear:both; overflow:hidden; }
@@ -157,11 +174,15 @@ span.box {
 footer { font-size:12px; text-align:center; padding-top:20px; }
 #last-modified { font-style:italic; color:gray; }
 
-section#skills {
+section.page {
+  min-height: 400px;
+
   header {
     p { font-style: italic; font-size: 14px; }
   }
+}
 
+section#skills {
   section {
     article {
       .content { float: none; }

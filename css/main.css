@@ -44,8 +44,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  font-weight: bold;
-  color: #99A;
+  color: #ccc;
 }
 #wrapper {
   margin: 0 auto;
@@ -66,6 +65,9 @@ a:hover {
 }
 #sidebar ul li {
   list-style: none;
+}
+#sidebar ul li.pad-top {
+  padding-top: 15px;
 }
 #sidebar ul li a {
   display: block;
@@ -254,7 +256,7 @@ article p,
 article ul {
   clear: both;
   font-size: 14px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 article ul li {
   margin-left: 16px;
@@ -300,7 +302,10 @@ footer {
   font-style: italic;
   color: gray;
 }
-section#skills header p {
+section.page {
+  min-height: 400px;
+}
+section.page header p {
   font-style: italic;
   font-size: 14px;
 }
