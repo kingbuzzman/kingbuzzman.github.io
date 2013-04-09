@@ -18,6 +18,7 @@ $(document).ready(function(){
       var box = $(this).find('.box');
       var time = box.clone();
 
+      var font = 0;
       var message = "";
       var months = 0;
       var years = 0;
@@ -40,26 +41,50 @@ $(document).ready(function(){
       months += end.getMonth() + 1;
 
       // calculate the amount of years
-      years = months / 12;
+      years = parseInt(months / 12, 10);
+      months = parseInt(months % 12, 10);
 
-      if (parseInt(years, 10) > 0) {
-        message = years.toFixed(2) + ' years';
-      } else {
-        message = months + ' months';
+      // years
+      if (years > 0) {
+        message = years + ' year';
+        if (years > 1) {
+          message += 's';
+        }
       }
 
-      time.hide();
+      // months
+      if (months > 0) {
+        if (years > 0) {
+           message += ' and ';
+        }
+        message += months + ' month';
+        if (months > 1) {
+          message += 's';
+        }
+      }
+
       time.css({
+        'visibility': 'hidden',
         'width': box.width(),
         'position': 'relative',
         'right': -1 * box.innerWidth(),
         'textAlign': 'center'
       });
-      time.html(message);
+      time.html(message).attr('title', message);
+      box.after(time); // attach the human readable time
+
+      font = parseInt(time.css('font-size'), 10);
+      while (time.height() > box.height() && font > 4) {
+        time.css('font-size', font--);
+      }
+
+      time.css({
+        'visibility': '',
+        'height': box.height()
+      }).hide();
 
       box.stop();
       box.animate({opacity:0});
-      box.after(time); // attach the human readable time
 
       time.fadeIn();
     }, function() {
