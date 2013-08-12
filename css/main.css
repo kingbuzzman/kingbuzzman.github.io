@@ -93,6 +93,14 @@ a:hover {
   margin-left: 200px;
   width: 600px;
 }
+.strike {
+  opacity: 0.5;
+  text-decoration: line-through;
+  color: red;
+}
+.strike span {
+  color: #ccc;
+}
 header {
   overflow: hidden;
 }
@@ -121,14 +129,6 @@ header {
 }
 #main-details-wrap h4 {
   font-style: italic;
-}
-#main-details-wrap h4 .strike {
-  opacity: 0.5;
-  text-decoration: line-through;
-  color: red;
-}
-#main-details-wrap h4 .strike span {
-  color: #ccc;
 }
 #main-details-wrap ul {
   padding: 10px;
@@ -229,6 +229,10 @@ article h4 {
 article h4 div {
   float: left;
 }
+article h4 strong {
+  float: right;
+  font-style: italic;
+}
 article h4 a,
 article h4 span,
 article h4 div {
@@ -280,7 +284,7 @@ ul.tags li {
   font-size: 12px;
   text-align: center;
 }
-span.box {
+.box {
   vertical-align: top;
   background: #333;
   color: white;

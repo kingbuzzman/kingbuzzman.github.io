@@ -14,8 +14,8 @@ $(document).ready(function(){
     $("#year").html(CURRENT_YEAR);
 
     // friendlier amount time spent at each job
-    $("#employment h4").hover(function() {
-      var box = $(this).find('.box');
+    $("#employment h5").hover(function() {
+      var box = $(this).find('.time');
       var time = box.clone();
 
       var font = 0;
@@ -61,6 +61,8 @@ $(document).ready(function(){
         if (months > 1) {
           message += 's';
         }
+      } else if (years == 0) {
+        message = 'Present';
       }
 
       time.css({
@@ -92,7 +94,9 @@ $(document).ready(function(){
       var time = box.next();
 
       box.stop();
-      box.animate({opacity:1});
+      box.animate({opacity:1}, function() {
+        box.removeAttr('style');
+      });
       time.remove();
     });
 
