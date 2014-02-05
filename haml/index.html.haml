@@ -1,7 +1,11 @@
 !!!
 
 - require 'date'
-- last_modified = Date.new(2013,11,17)
+
+- options = @_haml_locals[:_hamlout].options
+- options[:remove_whitespace] = true
+
+- last_modified = Date.new(2014,2,5)
 
 %html{lang: "en"}
   %head
@@ -38,11 +42,12 @@
         %header
           #face-wrap
             %img{alt: "portrait", src: "http://sphotos.xx.fbcdn.net/hphotos-ash4/2602_56663637333_1010397_n.jpg"}/
+
           #main-details-wrap
             %ul
               %li.print-only www.buzzi.me
               %li Miami, FL
-              %li (786) 563-3862
+              %li (305) 905-2003
               %li buzzi.javier@gmail.com
             %h1 Javier Buzzi
             %h4
@@ -50,434 +55,27 @@
               %span.strike
                 %span Software Engineer
               %span.visual-aid ,&nbsp;Geek
+
         %section#skills.page
-          %header
-            %h2 SKILLS
-            %p My bread and butter
-          .content
-            .visual-aid
-              %img.visual-aid{alt: "Language skill visual aid", src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,85,80,70,95,50,25&chs=299x100&chl=Python|JavaScript|SQL|CSS|Coldfusion|Visual+Basic|Java&chco=AAAAAA,333333&chf=bg,s,65432100"}/
-              %img.visual-aid{alt: "Technology skill visual aid", src: "http://chart.googleapis.com/chart?cht=p3&chd=t:85,100,25,45,20,35&chs=299x100&chl=OS+X|Windows|Ubuntu|MS+SQL|MySQL|PostgreSQL&chco=AAAAAA,333333&chf=bg,s,65432100"}/
-            %section.group
-              %header
-                %h3 Languages
-              %article.top
-                .content
-                  %header
-                    %h4 English
-                    %span.box native
-              %article
-                .content
-                  %header
-                    %h4 Spanish
-                    %span.box native
-            %section.group
-              %header
-                %h3 Programming Languages
-              %article.top
-                .content
-                  %header
-                    %h4 Python
-                    %span.box advanced
-                  %p.top 2.x, Django
-              %article
-                .content
-                  %header
-                    %h4 JavaScript
-                    %span.box advanced
-                  %p.top jQuery, node.js, require.js, backbone.js, underscore.js, prototype.js, knockout.js
-              %article
-                .content
-                  %header
-                    %h4 SQL
-                    %span.box advanced
-                  %p.top MS SQL, PostgreSQL, MySQL
-              %article
-                .content
-                  %header
-                    %h4 CSS
-                    %span.box advanced
-                  %p.top v1, v2, v2.1, v3, LESS, SASS
-              %article
-                .content
-                  %header
-                    %h4 Coldfusion
-                    %span.box advanced
-                  %p.top 5.5, 7, 8, 9
-              %article
-                .content
-                  %header
-                    %h4 NoSQL
-                    %span.box intermediate
-                  %p.top Redis, Mongo
-              %article
-                .content
-                  %header
-                    %h4 ActionScript
-                    %span.box intermediate
-                  %p.top 3.0
-              %article
-                .content
-                  %header
-                    %h4 Visual Basic
-                    %span.box intermediate
-                  %p.top .NET, 6.0, VBS
-              %article
-                .content
-                  %header
-                    %h4 Java
-                    %span.box intermediate
-                  %p.top Play! Framework
-              %article
-                .content
-                  %header
-                    %h4 Ruby
-                    %span.box rookie
-                  %p.top Rails
-            %section.group
-              %header
-                %h3 Technologies
-              %article.top
-                .content
-                  %header
-                    %h4
-                      %span.icon.mac>
-                      Mac OS X
-                    %span.box advanced
-                  %p.top 10.5+
-              %article
-                .content
-                  %header
-                    %h4
-                      %span.icon.window>
-                      Windows
-                    %span.box advanced
-                  %p.top 98, NT, 2000, XP, 2003, Vista, 7, 8
-              %article
-                .content
-                  %header
-                    %h4
-                      %span.icon.ubuntu>
-                      Ubuntu
-                    %span.box intermediate
-                  %p.top 10.10, 11.04
-              %article
-                .content
-                  %header
-                    %h4
-                      %span.icon.postgres>
-                      PostgreSQL
-                    %span.box intermediate
-                  %p.top 8.0, 9.x
-              %article
-                .content
-                  %header
-                    %h4
-                      %span.icon.mssql>
-                      Microsoft SQL
-                    %span.box intermediate
-                  %p.top 2000, 2005, 2008
-              %article
-                .content
-                  %header
-                    %h4
-                      %span.icon.mysql>
-                      MySQL
-                    %span.box intermediate
-                  %p.top 5.x
-            %h3.visual-aid Other Visual Aid
-            .visual-aid
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:15,1&chs=299x98&chl=OS+X|Windows&chco=AAAAAA,999999&chf=bg,s,65432100", title: "OS usage"}/
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100&chs=299x98&chl=Vim&chco=999999,AAAAAA&chf=bg,s,65432100", title: "Editor usage"}/
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:90,20,10&chs=299x98&chl=Chrome|Firefox|IE&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Browser usage"}/
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:3,4,4,7&chs=299x98&chl=Coding|Clicking|Reading|Hunting+bugs&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Computer usage"}/
+          = Haml::Engine.new(File.read("haml/pages/skills.haml"), options).render
+
         %section#employment.page
-          %header
-            %h2 EMPLOYMENT
-          %article.top
-            %h4
-              %a{href: "http://www.senzari.com", target: "_blank"} Senzari Inc.
-              %strong Miami, Fl
-            %h5
-              %span Senior Software Engineer
-              %strong.box.time Aug 2013 - Present
-            %h5
-              %span.strike
-                %span Software Engineer
-              %strong.box.time Oct 2011 - Aug 2013
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Python
-                %li Django
-                %li ORM
-                %li MVC
-                %li CoffeeScript
-                %li JavaScript
-                %li jQuery
-                %li jQuery UI
-                %li backbone.js
-                %li Node.js
-                %li Redis
-                %li Socket.io
-                %li SQL
-                %li CSS
-                %li LESS
-                %li SASS
-                %li Git
-                %li MySQL
-                %li Postgres
-                %li MongoDB
-                %li Apache
-                %li REST
-                %li Facebook API
-                %li Google Ads API
-                %li ActionScript
-                %li Vagrant
-                %li Gunicorn
-                %li nginx
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:5,5,3,5,7,6,2,7,1,4,9,3,3,4,3,4,5&chs=299x107&chl=Python|Django|ORM|MVC|JavaScript|jQuery|jQuery+UI|backbone.js|SQL|CSS|GIT|MySQL|Postgres|MongoDB|Apache|REST|FB+API&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-          %article
-            %h4
-              %a{href: "http://thepoliticalliedetector.com/", target: "_blank"} Issue Based Media
-              %strong Miami, Fl
-            %h5
-              %span Software Engineer
-              %strong.box.time Jun 2011 - Sep 2011
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Java
-                %li Play!
-                %li ORM
-                %li MVC
-                %li Regex
-                %li JavaScript
-                %li jQuery
-                %li jQuery UI
-                %li SQL
-                %li CSS
-                %li MySQL
-                %li Tomcat
-                %li Apache
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:15,5,5,3,20,100,80,5,10,80,20,15,40&chs=299x107&chl=Java|Play!|ORM|MVC|Regex|JavaScript|jQuery|jQuery+UI|SQL|CSS|MySQL|Tomcat|Apache&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-          %article
-            %h4
-              %a{href: "http://www.visibilityrevolution.com/", target: "_blank"} Team 2 LLC
-              %strong Miami Beach, Fl
-            %h5
-              %span Lead Software Engineer
-              %strong.box.time Dec 2010 - Jun 2011
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Python
-                %li Django
-                %li ORM
-                %li MVC
-                %li Regex
-                %li JavaScript
-                %li jQuery
-                %li jQuery UI
-                %li SQL
-                %li CSS
-                %li Git
-                %li PostgreSQL
-                %li Ubuntu
-                %li Apache
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,100,60,70,50,100,90,30,60,70,90,70,50,25&chs=299x98&chl=Python|Django|ORM|MVC|Regex|JavaScript|jQuery|jQuery+UI|SQL|CSS|GIT|PostgreSQL|Ubuntu|Apache&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-          %article
-            %h4
-              %a{href: "http://www.grabswag.com/", target: "_blank"} Miami Web Staff
-              %strong Miami Beach, Fl
-            %h5
-              %span QAT/ Software Engineer
-              %strong.box.time Jul 2010 - Nov 2010
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Python
-                %li Django
-                %li ORM
-                %li MVC
-                %li Regex
-                %li JavaScript
-                %li jQuery
-                %li SQL
-                %li CSS
-                %li Git
-                %li PostgreSQL
-                %li MySQL
-                %li Ubuntu
-                %li Apache
-                %li Debugging
-                %li Testing
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,100,60,70,50,100,90,60,70,80,10,10,10,90,90&chs=299x98&chl=Python|Django|ORM|MVC|Regex|JavaScript|jQuery|SQL|CSS|GIT|PostgreSQL|MySQL|Ubuntu|Apache|Debugging|Testing&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-          %article
-            %h4
-              %a{href: "http://www.webtron.com/", target: "_blank"} Webtron Inc.
-              %strong Miami, Fl
-            %h5
-              %span Software Engineer
-              %strong.box.time Feb 2008 - Jul 2010
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Coldfusion
-                %li .NET
-                %li Regex
-                %li JavaScript
-                %li jQuery
-                %li jQuery UI
-                %li prototype.js
-                %li SQL
-                %li CSS
-                %li Microsoft SQL
-                %li IIS
-                %li Microsoft Server
-                %li Voxeo
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,30,60,100,90,30,10,100,100,40,50,50,25&chs=320x98&chl=Coldfusion|.NET|Regex|JavaScript|jQuery|jQuery+UI|prototype.js|SQL|CSS|Microsoft+SQL|IIS|Microsoft+Server|Voxeo&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-          %article
-            %h4
-              %a{href: "http://www.interbee.com/", target: "_blank"} Fix My PC Inc.
-              %strong Miami, Fl
-            %h5
-              %span Computer Technician
-              %strong.box.time Aug 2007 - Feb 2008
-            .breakdown
-              %ul.tags{title: "tags"}
-                %li Repair
-                %li Install
-                %li Update
-                %li Upgrade
-                %li Maintain
-                %li Desktop
-                %li Notebook
-                %li PC
-                %li Mac
-                %li Virus Removal
-                %li LAN
-                %li WAN
-                %li Custom Built PC's
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,90,90,50,30,90,50,2,90,20,20,20&chs=350x98&chl=Repair|Install|Update|Upgrade|Maintain|Desktop|Notebook|PC|Mac|Virus+Removal|Custom+Built+PC's|LAN|WAN&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
+          = Haml::Engine.new(File.read("haml/pages/employment.haml"), options).render
+
         %section#education.page-break
-          %a{name: "education"}
-          %h2 EDUCATION
-          %article.top
-            %h4
-              %span Miami Dade College
-              %span.box 2005 - 2007
-            %h5
-              %span AA in Computer Science
-              %strong Miami, Fl
-            %ul.tags{title: "If it was technology oriented -- i took it :D"}
-              %li Computer Programming
-              %li Computer Design
-              %li Computer Engineering
-              %li Electrical Engineering
-              %li Logic
-              %li Circuits
-              %li Game Design
-              %li Game Development
-              %li Networking
-          %article
-            %h4
-              %span Miami Central High School
-              %span.box 2001 - 2005
-            %h5
-              %span Graduate
-              %strong Miami, Fl
-          %h3.visual-aid Awards
-          %article.top.visual-aid
-            %h4
-              %span 1st Place FBLA (Miami)
-              %span.box 2005
-            %p.top Java competition
-          %article.visual-aid
-            %h4
-              %span 1st Place FBLA (Miami)
-              %span.box 2004
-            %p.top Visual Basic competition
-          %article.visual-aid
-            %h4
-              %span 1st Place FBLA (Florida)
-              %span.box 2003
-            %p.top Visual Basic competition
-          %article.visual-aid
-            %h4
-              %span 2nd Place FBLA (Miami)
-              %span.box 2003
-            %p.top Visual Basic competition
-          %p#who-cares.visual-aid But that was high school. Who cares?
+          = Haml::Engine.new(File.read("haml/pages/education.haml"), options).render
+
         %section#aboutme.page
-          %a{name: "aboutme"}
-          %h2 ABOUT ME
-          %article.top
-            %p.top
-              I'm extremely down to earth and have an immense sense of humor. I don't smoke, I don't drink, if my background
-              was any cleaner than it's now - you wouldn't be able to tell if I've ever existed. I've been told on several
-              occasions that I have no life - to which I always reply: I'm a gamer, I have lots of lifes. I'm well educated
-              and well informed  (
-              %a{href: "http://www.reddit.com/", target: "_blank"} reddit
-              &nbsp;and&nbsp;
-              %a{href: "http://news.ycombinator.com/", target: "_blank"} hackernews
-              )
-          %article
-            %h4 Interests & Hobbies
-            .breakdown
-              %ul.tags{title: "Not in any particular order..."}
-                %li Sleeping
-                %li Scuba Diving
-                %li Gym
-                %li Reading
-                %li Eating
-                %li Comedy
-                %li Encryption
-                %li Science
-                %li Philosophy
-                %li Knowledge
-                %li Algorithms
-                %li Video Games
-                %li XBOX
-                %li Swimming
-                %li Running
-                %li History
-                %li Computers
-                %li reddit.com
-                %li Finances
-                %li Technology
-                %li Stocks
-                %li Music
-                %li Grooveshark.com
-                %li Phones
-                %li Movies
-                %li News
-                %li Development
-                %li Scripts
-                %li iPhone
-                %li The Daily Show
-                %li The Colbert Report
-                %li Coding
-                %li Physics
-                %li Politics
-                %li Modding
-                %li Hacking
-                %li Driving
-                %li Cars
-                %li Creativity
-                %li Python
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,50,50,20,8,10,95,80,70,80,80,100,20,20,100,100&chs=430x150&chl=Sleeping|Reading|Eating|XBOX|Swimming|Running|reddit.com|Stocks|Grooveshark.com|Daily+Show|Colbert+Report|Coding|Modding|Hacking|Driving|Python&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Time spend each day"}/
-              %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:100,90,90,90,90,90,100,100,100,90,100,90,100,90,90,100,85,80,80,80&chs=430x150&chl=Comedy|Encryption|Science|Philosophy|Knowledge|Algorithms|Video+Games|History|Computers|Finances|Music|Phones|Movies|News|iPhone|Coding|Physics|Politics|Cars|Creativity&chco=AAAAAA,333333&chf=bg,s,65432100", title: "Interests.. they overlap.. obviously"}/
+          = Haml::Engine.new(File.read("haml/pages/about.haml"), options).render
+
         %section#hire.page.visual-aid
-          %header
-            %h2 HAVE AN IDEA?
-            %p I'll work for free
-          %article.top
-            %p.top
-              Yeah, thats right,&nbsp;
-              %strong FREE!
-              &nbsp;If I determine your idea/ needs are worth while, I will dedicate as many programming man hours
-              nessesary to get the project complete.
-            %p Anything from integrations, to automations. Call or email me the details.
+          = Haml::Engine.new(File.read("haml/pages/hire.haml"), options).render
+
         %footer
           #legal
             Javier.Buzzi.me  &copy;&nbsp;
             %span#year #{last_modified.year}
           #last-modified Last modified: #{DateTime::ABBR_MONTHNAMES[last_modified.month]} #{last_modified.strftime('%d, %Y')}
+
     /[if lt IE 9]
       %script{type: 'text/javascript', src: '//html5shiv.googlecode.com/svn/trunk/html5.js'}
