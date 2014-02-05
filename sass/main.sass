@@ -1,3 +1,5 @@
+@import "compass"
+
 *
   padding: 0
   margin: 0
@@ -39,7 +41,7 @@ section, article, footer
   text-decoration: none !important
 
 body
-  background: url(/images/body_bg.png) fixed
+  background: inline-image("body_bg.png") fixed
 
 a
   color: #999
@@ -181,29 +183,30 @@ article
       display: none
 
 .icon
-  background-image: url(/images/sprites.png)
+  background-size: 15px 15px
   height: 15px
   width: 15px
   float: left
   margin-right: 7px
 
 .window
-  background-position: 17px 0px
+  background-image: inline-image("windows.png")
 
 .mac
-  background-position: 35px 0px
+  background-image: inline-image("macos.png")
 
 .ubuntu
-  background-position: 84px 0px
+  background-image: inline-image("ubuntu.png")
 
 .mssql
-  background-position: 55px 0px
+  background-image: inline-image("mssql.png")
 
 .mysql
-  background-position: 71px 0px
+  background-image: inline-image("mysql.png")
+  background-color: white
 
 .postgres
-  background-position: 0px 0px
+  background-image: inline-image("postgres.png")
 
 article
   h4
