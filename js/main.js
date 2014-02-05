@@ -3,8 +3,8 @@ $(document).ready(function() {
   toggleBreakdown = function() {
     var element;
     element = $(this);
-    return element.children("img").slideToggle("slow", function() {
-      return element.unbind("click").one("click", toggleBreakdown);
+    element.children("img").slideToggle("slow", function() {
+      element.unbind("click").one("click", toggleBreakdown);
     });
   };
   navigationLinks = $("#sidebar a");
@@ -75,7 +75,7 @@ $(document).ready(function() {
       box.animate({
         opacity: 0
       });
-      return time.fadeIn();
+      time.fadeIn();
     }), function() {
       var box, time;
       box = $(this).find(".box");
@@ -84,31 +84,31 @@ $(document).ready(function() {
       box.animate({
         opacity: 1
       }, function() {
-        return box.removeAttr("style");
+        box.removeAttr("style");
       });
-      return time.remove();
+      time.remove();
     });
     navigationPanels.addClass("hidden");
     if (preload.length === 1) {
       preload.removeClass("hidden");
-      return navigationLinks.filter("[href=" + URL_HASH + "]").addClass("bold");
+      navigationLinks.filter("[href=" + URL_HASH + "]").addClass("bold");
     } else {
       navigationPanels.first().removeClass("hidden");
-      return navigationLinks.first().addClass("bold");
+      navigationLinks.first().addClass("bold");
     }
   })();
   $(".breakdown").hover(function() {
-    return $(this).children("img").hide();
+    $(this).children("img").hide();
   }, function() {
-    return $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr("style");
+    $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr("style");
   }).one("click", toggleBreakdown);
-  return navigationLinks.click(function() {
+  navigationLinks.click(function() {
     var element, navigationLink;
     navigationLink = $(this);
     element = $(navigationLink.attr("href"));
     navigationPanels.addClass("hidden");
     navigationLinks.removeClass("bold");
     navigationLink.addClass("bold");
-    return element.hide().removeClass("hidden").fadeIn();
+    element.hide().removeClass("hidden").fadeIn();
   });
 });

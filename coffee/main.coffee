@@ -5,6 +5,8 @@ $(document).ready ->
     element = $(this)
     element.children("img").slideToggle "slow", ->
       element.unbind("click").one "click", toggleBreakdown
+      return
+    return
 
   navigationLinks = $("#sidebar a")
   navigationPanels = $("#page > section")
@@ -84,6 +86,7 @@ $(document).ready ->
       box.animate opacity: 0
 
       time.fadeIn()
+      return
     ), () ->
       box = $(this).find(".box")
       time = box.next()
@@ -93,8 +96,10 @@ $(document).ready ->
         opacity: 1
       , () ->
         box.removeAttr "style"
+        return
 
       time.remove()
+      return
 
     # hide all panels
     navigationPanels.addClass "hidden"
@@ -106,13 +111,17 @@ $(document).ready ->
     else
       navigationPanels.first().removeClass "hidden"
       navigationLinks.first().addClass "bold"
+
+    return
   )()
   
   # image breakdown for tags
   $(".breakdown").hover(() ->
     $(this).children("img").hide()
+    return
   , ->
     $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr "style"
+    return
   ).one "click", toggleBreakdown
   
   # navigation handling
@@ -125,3 +134,6 @@ $(document).ready ->
     
     # to use animations the element needs to be hidden (not with a class)
     element.hide().removeClass("hidden").fadeIn()
+    return
+
+  return
