@@ -34,7 +34,7 @@ guard 'sass',
   :all_on_start => true,
   :style => :compressed,
   :compass => {
-    :images_dir => "app/images",
+    :images_dir => "/images",
     :images_path => File.join(Dir.pwd, "images"),
     :http_path => "/",
     :http_images_path => "/images",
