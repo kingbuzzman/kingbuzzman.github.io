@@ -5,7 +5,7 @@
 - options = @_haml_locals[:_hamlout].options
 - options[:remove_whitespace] = true
 
-- last_modified = Date.new(2014,2,5)
+- last_modified = Date.new(2014,3,6)
 
 %html{lang: "en"}
   %head
@@ -36,8 +36,7 @@
             %a{href: "#education", title: "View where I studied and gained my foundation skills"} Education
           %li
             %a{href: "#aboutme", title: "Click here to find out a little more about me!"} About Me
-          %li.pad-top
-            %a{href: "#hire", title: "Got a project you want help with?"} Hire me!
+
       #page
         %header
           #face-wrap
@@ -67,9 +66,6 @@
 
         %section#aboutme.page
           = Haml::Engine.new(File.read("haml/pages/about.haml"), options).render
-
-        %section#hire.page.visual-aid
-          = Haml::Engine.new(File.read("haml/pages/hire.haml"), options).render
 
         %footer
           #legal
