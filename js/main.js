@@ -9,6 +9,9 @@ $(document).ready(function() {
   };
   navigationLinks = $("#sidebar a");
   navigationPanels = $("#page > section");
+  $('.dead-link').click(function(event) {
+    return false;
+  });
   (function() {
     var CURRENT_YEAR, URL_HASH, preload;
     CURRENT_YEAR = (new Date()).getFullYear();

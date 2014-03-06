@@ -11,6 +11,9 @@ $(document).ready ->
   navigationLinks = $("#sidebar a")
   navigationPanels = $("#page > section")
 
+  $('.dead-link').click (event) ->
+    return false
+
   # initial preparation
   (() ->
     CURRENT_YEAR = (new Date()).getFullYear()
