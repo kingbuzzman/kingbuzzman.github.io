@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'compass'
 gem 'foreman'
-gem 'rb-fsevent', '~> 0.9'
+gem 'rb-fsevent'
 
 gem 'guard'
 gem 'guard-haml'
