@@ -1,7 +1,7 @@
 #/bin/env/sh
 
 CURRENT_PATH="$(dirname "${BASH_SOURCE[0]}")"
-ENVIRONMENT="$CURRENT_PATH/.env"
+ENVIRONMENT="$CURRENT_PATH/env"
 
 if [ ! -d $ENVIRONMENT ]; then
     mkdir $ENVIRONMENT
