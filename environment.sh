@@ -16,8 +16,10 @@ if [ ! -d $ENVIRONMENT ]; then
       curl -o /tmp/node-v0.12.7-darwin-x64.tar.gz "http://nodejs.org/dist/v0.12.7/node-v0.12.7-darwin-x64.tar.gz" &
     fi
 
+    # wait for the downloads to finish
     wait
 
+    # prep the environment
     mkdir -p $ENVIRONMENT/lib/
     mkdir -p $ENVIRONMENT/bin/
     mkdir -p $ENVIRONMENT/include/
@@ -27,6 +29,7 @@ if [ ! -d $ENVIRONMENT ]; then
     cp -r /tmp/ruby-2.1.7/lib/* $ENVIRONMENT/lib/
     cp -r /tmp/ruby-2.1.7/bin/* $ENVIRONMENT/bin/
     cp -r /tmp/ruby-2.1.7/include/* $ENVIRONMENT/include/
+    $ENVIRONMENT/bin/gem install bundler
 
     # install node
     tar -zxvf /tmp/node-v0.12.7-darwin-x64.tar.gz -C /tmp/
@@ -40,6 +43,18 @@ fi
 
 export PATH="$ENVIRONMENT/bin:$PATH"
 
-gem install bundler
 bundle install
 npm install coffee-script@1.10.0
+
+# helper functions
+
+function runserver() {
+    foreman start
+}
+
+function cleanup() {
+    rm -rf .sass-cache
+    rm -rf *.html
+    rm -rf css/
+    rm -rf js/
+}

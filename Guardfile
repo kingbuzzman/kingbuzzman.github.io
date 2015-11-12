@@ -1,8 +1,3 @@
-# # Clean up existing generated code
-# `rm -rf *.html`
-# `rm -rf css/`
-# `rm -rf js/`
-
 # Compile haml files
 guard 'haml',
   :input => 'haml',
