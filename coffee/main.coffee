@@ -117,7 +117,7 @@ $(document).ready ->
 
     return
   )()
-  
+
   # image breakdown for tags
   $(".breakdown").hover(() ->
     $(this).children("img").hide()
@@ -126,15 +126,19 @@ $(document).ready ->
     $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr "style"
     return
   ).one "click", toggleBreakdown
-  
+
   # navigation handling
   navigationLinks.click ->
     navigationLink = $(this)
-    element = $(navigationLink.attr("href"))
+    path = navigationLink.attr("href")
+    ga 'send',
+      hitType: 'pageview',
+      page: path.substr(1, path.length)
+    element = $(path)
     navigationPanels.addClass "hidden"
     navigationLinks.removeClass "bold"
     navigationLink.addClass "bold"
-    
+
     # to use animations the element needs to be hidden (not with a class)
     element.hide().removeClass("hidden").fadeIn()
     return

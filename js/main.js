@@ -106,9 +106,14 @@ $(document).ready(function() {
     $(this).unbind("click").one("click", toggleBreakdown).children("img").stop().removeAttr("style");
   }).one("click", toggleBreakdown);
   navigationLinks.click(function() {
-    var element, navigationLink;
+    var element, navigationLink, path;
     navigationLink = $(this);
-    element = $(navigationLink.attr("href"));
+    path = navigationLink.attr("href");
+    ga('send', {
+      hitType: 'pageview',
+      page: path.substr(1, path.length)
+    });
+    element = $(path);
     navigationPanels.addClass("hidden");
     navigationLinks.removeClass("bold");
     navigationLink.addClass("bold");
