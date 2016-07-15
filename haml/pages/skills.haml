@@ -1,3 +1,28 @@
+- require 'date'
+- current_year = Date.today().year
+- timeline = [ { :name => 'Windows', :range => (2001..2011).flat_map { |x| [x] } },
+               { :name => 'MS Batch', :range => (2001..2010).flat_map { |x| [x] } },
+               { :name => 'MS Access', :range => (2001..2007).flat_map { |x| [x] } },
+               { :name => 'VB6', :range => (2001..2007).flat_map { |x| [x] } },
+               { :name => 'Java', :range => (2003..2007).flat_map { |x| [x] } + [2011] },
+               { :name => 'VB.NET', :range => (2004..2009).flat_map { |x| [x] } },
+               { :name => 'CSS', :range => (2007..current_year).flat_map { |x| [x] } },
+               { :name => '⌙ LESS', :range => (2013..current_year).flat_map { |x| [x] } },
+               { :name => '⌙ SASS', :range => (2013..current_year).flat_map { |x| [x] } },
+               { :name => 'Coldfusion', :range => (2008..2010).flat_map { |x| [x] } },
+               { :name => 'MS SQL', :range => (2008..2010).flat_map { |x| [x] } },
+               { :name => 'Javascript', :range => (2008..current_year).flat_map { |x| [x] } },
+               { :name => '⌙ Coffeescript', :range => (2011..current_year).flat_map { |x| [x] } },
+               { :name => 'Bash', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'Ubuntu', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'OS X', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'Python', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'Postgres', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'Redis', :range => (2010..current_year).flat_map { |x| [x] } },
+               { :name => 'MySQL', :range => [2010, 2011, 2013, 2014] },
+               { :name => 'MongoDB', :range => [2010, 2011, 2013] }
+- ]
+
 %header
   %h2 SKILLS
   %p My bread and butter
@@ -106,7 +131,7 @@
           %h4
             %span.icon.ubuntu>
             Ubuntu
-          %span.box intermediate
+          %span.box advanced
         %p.top Precise-Vivid
     %article
       .content
@@ -114,7 +139,7 @@
           %h4
             %span.icon.postgres>
             PostgreSQL
-          %span.box intermediate
+          %span.box advanced
         %p.top 8.0, 9.x
     %article
       .content
@@ -140,6 +165,26 @@
             Redis
           %span.box intermediate
         %p.top 3.x
+
+  %section.group
+    %header
+      %h3 Timeline
+      %p Who doesn't like graphs?!
+    %article.top.nohover
+      .content
+        %table#timeline
+          %thead
+            %tr
+              %th
+              - (2001..current_year).each do |year|
+                %th #{year}
+          %tbody
+            - timeline.each do |item|
+              %tr{:title => "#{item[:range].size} years of experience.. give or take"}
+                %td #{item[:name]}
+                - (2001..current_year).each do |year|
+                  %td{:class => "#{item[:range].include? year}"}
+
   %h3.visual-aid Other Visual Aid
   .visual-aid
     %img.visual-aid{src: "http://chart.googleapis.com/chart?cht=p3&chd=t:15,1,10&chs=299x98&chl=OS+X|Windows|Linux&chco=AAAAAA,333333,999999&chf=bg,s,65432100", title: "OS usage"}/
