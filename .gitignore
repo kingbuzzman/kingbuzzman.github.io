@@ -3,5 +3,6 @@
 
 *.swp
 
+pages/
 Gemfile.lock
 env/

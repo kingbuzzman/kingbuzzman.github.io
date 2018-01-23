@@ -8,7 +8,7 @@ guard 'haml',
     :escape_attrs => false,
     :escape_html => false,
     :remove_whitespace => true,
-    :ugly => true
+    # :ugly => true
   }
 
 # Compile coffeescript

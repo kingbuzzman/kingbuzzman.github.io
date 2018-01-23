@@ -13,7 +13,7 @@
                { :name => 'MS SQL', :range => (2008..2010).flat_map { |x| [x] } },
                { :name => 'Javascript', :range => (2008..current_year).flat_map { |x| [x] } },
                { :name => '⌙ Coffeescript', :range => (2011..2016).flat_map { |x| [x] } },
-               { :name => '⌙ Typescript', :range => (2016..current_year).flat_map { |x| [x] } },
+               { :name => '⌙ Typescript', :range => (2016..2017).flat_map { |x| [x] } },
                { :name => 'Bash', :range => (2010..current_year).flat_map { |x| [x] } },
                { :name => 'Ubuntu', :range => (2010..current_year).flat_map { |x| [x] } },
                { :name => 'OS X', :range => (2010..current_year).flat_map { |x| [x] } },
@@ -21,8 +21,8 @@
                { :name => 'Postgres', :range => (2010..current_year).flat_map { |x| [x] } },
                { :name => 'Redis', :range => (2010..current_year).flat_map { |x| [x] } },
                { :name => 'MySQL', :range => [2010, 2011, 2013, 2014] },
-               { :name => 'MongoDB', :range => [2010, 2011, 2013] }
-- ]
+               { :name => 'MongoDB', :range => [2010, 2011, 2013] },
+               { :name => 'Docker', :range => [2016..current_year].flat_map { |x| [x] } } ]
 
 %header
   %h2 SKILLS
@@ -142,6 +142,13 @@
             PostgreSQL
           %span.box advanced
         %p.top 8.0, 9.x
+    %article
+      .content
+        %header
+          %h4
+            Docker
+          %span.box advanced
+        %p.top 1.10.0+
     %article
       .content
         %header
