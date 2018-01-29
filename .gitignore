@@ -3,6 +3,5 @@
 
 *.swp
 
-pages/
-Gemfile.lock
-env/
+/pages/
+/Gemfile.lock

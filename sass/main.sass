@@ -133,15 +133,30 @@ header
 #main-details-wrap
   float: left
   padding: 10px
+
   h1
     font-size: 38px
+
   h4
     font-style: italic
+
   ul
     padding: 10px
+
     li
       list-style: none
       display: block
+
+      a
+        padding-right: 5px
+
+        &:last-child:after
+          content: ""
+
+        &:after
+          padding-left: 5px
+          content: "|"
+          color: #ccc
 
 h2
   padding-top: 10px
